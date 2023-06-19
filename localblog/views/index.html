@@ -16,6 +16,8 @@
   <meta http-equiv="Page-Exit" content="blendTrans(Duration=0.9)" />  
   <title>LocalBlog</title>
   <link rel="shortcut icon" type="image/x-icon" href="/static/logo.png">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
 {% block top %}
@@ -24,6 +26,12 @@
 
 <div class="ml-10 mr-10 h-full">
   {% block mid %}
+    {% if msg %}
+    <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
+      <p class="font-bold">업데이트! </p>
+      <p>{{ msg }}</p>
+    </div>
+    {% endif %}
   <div class="wrap">
     <div class="intro_bg">
       <div class="header">
